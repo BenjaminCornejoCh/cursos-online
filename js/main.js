@@ -1,6 +1,4 @@
 
-console.log( PI * 3);
-
 addEventListener('DOMContentLoaded', () => {
   const btn_menu = document.querySelector('.btn-menu');
   if (btn_menu) {

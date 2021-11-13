@@ -9,7 +9,7 @@
   --color2: #00ccff;
   --color3: #d400d4;
   --color4: #fff;
-  --color5: #C0BFBF;
+  --color5: #c0bfbf;
 }
 
 body {
@@ -171,9 +171,11 @@ ul.show {
   margin: 25px 0;
 }
 .box-text button {
+  position: relative;
   width: 50%;
   margin: auto;
   margin-top: 20px;
+  margin-bottom: 20px;
   color: var(--color4);
   padding: 15px;
   border-style: none;
@@ -188,7 +190,8 @@ ul.show {
   cursor: pointer;
 }
 /* ? BANNER */
-.banner, .banner-2 {
+.banner,
+.banner-2 {
   width: 100%;
   margin: 60px 20px;
   text-align: center;
@@ -222,7 +225,6 @@ ul.show {
 .card {
   width: calc(50% - 20px);
   margin-bottom: 30px;
-  /* margin: auto; */
 }
 .card-col {
   position: relative;
@@ -244,7 +246,7 @@ ul.show {
 .card-img {
   position: relative;
   z-index: 2;
-  width: 40%;
+  width: 30%;
   padding: 10px;
   display: flex;
   justify-content: center;
@@ -257,7 +259,7 @@ ul.show {
 .card-content {
   position: relative;
   z-index: 2;
-  width: 60%;
+  width: 70%;
   padding: 10px;
 }
 .card-content p:nth-child(1) {
@@ -281,7 +283,7 @@ ul.show {
   color: var(--color3);
   font-size: 35px;
   font-weight: 600;
-  transition: .6s;
+  transition: 0.6s;
 }
 .title p:hover {
   color: var(--color2);
@@ -297,7 +299,7 @@ ul.show {
 }
 .box {
   position: relative;
-  width: calc(33% - 10px);
+  width: calc(33% - 20px);
   height: 400px;
   display: flex;
   justify-content: center;
@@ -311,15 +313,15 @@ ul.show {
   flex-direction: column;
 }
 .box::before {
-  content: '';
+  content: "";
   position: absolute;
-  width: 200px;
+  width: 150px;
   height: 240%;
   background: linear-gradient(var(--color2), var(--color3));
   animation: animate 5s linear infinite;
 }
 .box::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 4px;
   background: #0e1538;
@@ -330,7 +332,7 @@ ul.show {
   color: var(--color5);
   font-size: 6em;
   z-index: 2;
-  transition: .6s;
+  transition: 0.6s;
   cursor: pointer;
   margin-bottom: 20px;
 }
@@ -344,7 +346,7 @@ ul.show {
   color: var(--color5);
   font-size: 20px;
   font-weight: bold;
-  transition: .6s;
+  transition: 0.6s;
   cursor: pointer;
   padding: 10px;
 }
@@ -352,16 +354,18 @@ ul.show {
   color: var(--color4);
 }
 @keyframes animate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-
 
 /* ? FOOTER */
 footer {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  
 }
 .footer {
   margin: auto;
@@ -372,7 +376,7 @@ footer {
   align-items: center;
   max-width: 1200px;
 }
-label {
+.footer label {
   margin-left: 30px;
   font-size: 25px;
   letter-spacing: -1px;
@@ -380,7 +384,7 @@ label {
   color: var(--color2);
   transition: 0.5s;
 }
-label:hover {
+.footer label:hover {
   color: var(--color3);
   cursor: pointer;
 }
@@ -398,11 +402,29 @@ label:hover {
   font-size: 25px;
   display: block;
   color: var(--color4);
+  cursor: pointer;
+}
+.fa-facebook,
+.fa-instagram,
+.fa-whatsapp,
+.fa-youtube,
+.fa-tiktok {
   transition: 0.6s;
 }
-.footer-items li a:hover {
-  color: var(--color2);
-  cursor: pointer;
+.footer-items li a .fa-facebook:hover {
+  color: #3b5998;
+}
+.footer-items li a .fa-instagram:hover {
+  color: #c13584;
+}
+.footer-items li a .fa-whatsapp:hover {
+  color: #25d366;
+}
+.footer-items li a .fa-youtube:hover {
+  color: #ff0000;
+}
+.footer-items li a .fa-tiktok:hover {
+  color: #69c9d0;
 }
 .congrats {
   background-color: var(--color0);
@@ -413,16 +435,27 @@ label:hover {
   text-decoration: none;
   font-size: 15px;
   color: var(--color2);
-  transition: .6s ease;
+  transition: 0.6s ease;
 }
 .congrats a:hover {
   color: var(--color3);
 }
 
 /* ? MEDIA QUERIES */
-@media screen and (max-width: 858px) {
-  .menu {
+@media screen and (max-width: 1124px) {
+  .main-box {
+    height: 450px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  nav,
+  .nav-content {
     height: 65px;
+  }
+  svg {
+    width: 50px;
+    height: 50px;
   }
   .btn-menu {
     display: inline-flex;
@@ -454,16 +487,136 @@ label:hover {
     color: var(--color4);
   }
   .logo {
+    padding-left: 20px;
+  }
+  .logo label {
+    font-size: 30px;
+  }
+  .main-box {
+    height: 400px;
+  }
+  .box-text p:nth-child(1) {
+    font-size: 50px;
+  }
+  .box-text p:nth-child(2) {
     font-size: 25px;
-    padding-left: 35px;
+  }
+  .box-text p:nth-child(3) {
+    font-size: 15px;
+  }
+  .box-text button {
+    width: 70%;
   }
 }
-@media screen and (max-width: 858px) and (orientation: landscape) {
+@media screen and (max-width: 900px) and (orientation: landscape) {
   .menu-items li {
     margin: 5px 0 0 0;
   }
   .menu-items {
     overflow: hidden;
     height: calc(100% - 65px);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .main-box {
+    flex-direction: column;
+    align-content: center;
+    height: 500px;
+    width: 100%;
+  }
+  .main-box button {
+    width: 50%;
+  }
+  .box-text {
+    width: 100%;
+    height: 50%;
+  }
+  .box-image {
+    width: 100%;
+    height: 50%;
+    align-content: stretch;
+  }
+  .box-image img {
+    width: 40%;
+  }
+.banner, .banner-2 {
+  text-align: justify;
+}
+  .card-col {
+   flex-direction: column;
+   align-items: center;
+   height: 350px;
+   padding: 10px;
+  }
+  .card-img {
+   height: 100%;
+  }
+  .card-img img {
+   width: 100%;
+  }
+  .card-content {
+   width: 80%;
+   height: 50%;
+  }
+  .card-content p:nth-child(1) {
+  font-size: 20px;
+  }
+
+  .box {
+    width: calc(50% - 20px);
+    height: 350px;
+  }
+  .box i {
+    font-size: 5em;
+  }
+  .box p {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 584px) {
+  .card-box {
+    flex-direction: column;
+  }
+  .card {
+    width: 100%;
+  }
+  .card-img {
+    height: 50%;
+    margin: 15px 0;
+  }
+  .card-content {
+    width: 90%;
+  }
+  .footer {
+    height: 60px;
+  }
+  .footer label, .footer-items li a {
+    font-size: 17px;
+  }
+  .congrats, .congrats a {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 464px) {
+
+  .main-box button {
+    width: 60%;
+  }
+  .box-image img {
+    width: 60%;
+  }
+
+  .box {
+    width: calc(100% - 40px);
+    height: 300px;
+  }
+  .box i {
+    font-size: 5em;
+  }
+  .box p {
+    font-size: 17px;
   }
 }
